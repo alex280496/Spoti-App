@@ -8,6 +8,8 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class ArtistaComponent   {
 
+  artista:any={};
+  loading:boolean;
   constructor(
     private _route:ActivatedRoute,
     private spotify:SpotifyService
@@ -20,9 +22,12 @@ export class ArtistaComponent   {
   }
 
   getArtista(id:string){
+    this.loading=true;
     this.spotify.getArtista(id).subscribe(
       artista=>{
         console.log(artista);
+        this.artista=artista;
+        this.loading=false;
       }
     );
   }
