@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 //importar rutas
 import { ROUTES } from './app.routes';
@@ -19,8 +21,8 @@ import { SpotifyService } from './services/spotify.service';
 
 //importar Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
-import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
-import { LoadingComponent } from './components/shared/loading/loading.component';
+
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
+    DomseguroPipe,
     TarjetaComponent,
     LoadingComponent
   ],
