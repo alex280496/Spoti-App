@@ -9,6 +9,7 @@ import { SpotifyService } from '../../services/spotify.service';
 export class ArtistaComponent   {
 
   artista:any={};
+  TopTracks:any[]=[];
   loading:boolean;
   constructor(
     private _route:ActivatedRoute,
@@ -17,6 +18,7 @@ export class ArtistaComponent   {
     this._route.params.subscribe(
       params=>{
         this.getArtista(params['id']);
+        this.getTopTracks(params['id']);
       }
     );
   }
@@ -28,6 +30,15 @@ export class ArtistaComponent   {
         console.log(artista);
         this.artista=artista;
         this.loading=false;
+      }
+    );
+  }
+
+  getTopTracks(id:string){
+    this.spotify.getTopTracks(id).subscribe(
+      TopTracks=>{
+        console.log(TopTracks);
+        this.TopTracks=TopTracks;
       }
     );
   }

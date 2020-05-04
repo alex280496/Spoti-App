@@ -18,3 +18,31 @@
         </button>
     </div>
 </div>
+
+<div class="row animated fadeIn mt-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista Previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of TopTracks">
+                    <td>
+                        <img src="{{track.album.images |noimage}}" alt="" class="img-thumb">
+                    </td>
+                    <td>{{track.album.name}}</td>
+                    <td>{{track.name}}</td>
+                    <td>
+                        <audio src="{{track.preview_url}}" controls></audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
